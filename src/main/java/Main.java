@@ -60,24 +60,6 @@ public class Main {
                     chermander = null;
             }
         }
-//        bank.getInfo(0);
-//        System.out.println();
-//        bank.getInfo(15);
-//        System.out.println();
-//        System.out.println("Get most value treasure:");
-//        System.out.println(bank.getMostValuable());
-//        System.out.println();
-//        int money = 85;
-//
-//        System.out.println("Get set of treasures from the bank for " + money + ':');
-//        ArrayList<Treasure> treasuresCheckedBy = bank.getTreasuresCheckedBy(money);
-//        System.out.println(treasuresCheckedBy);
-//        System.out.printf("Total value of set is %d", Bank.getSumOfSet(treasuresCheckedBy));
-//        System.out.println("\n--------------------------------------------------------");
-//        System.out.println("Alternative getting set of treasures from the bank for " + money + ':');
-//        ArrayList<Treasure> altTreasuresCheckedBy = bank.chooseTreasures(money);
-//        System.out.println(altTreasuresCheckedBy);
-//        System.out.printf("Total value of set is %d", Bank.getSumOfSet(altTreasuresCheckedBy));
 
     }
 }
