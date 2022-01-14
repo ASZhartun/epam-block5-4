@@ -1,3 +1,9 @@
+import bank.Bank;
+import bank.Treasure;
+import dragon.Dragon;
+
+import java.util.ArrayList;
+
 /**
  * Задача 4.
  * Создать консольное приложение, удовлетворяющее следующим требованиям:
@@ -14,6 +20,64 @@
 
 public class Main {
     public static void main(String[] args) {
+        Bank bank = new Bank();
+        bank.addTreasure(
+                new Treasure(5),
+                new Treasure(12),
+                new Treasure(23),
+                new Treasure(43),
+                new Treasure(17),
+                new Treasure(31),
+                new Treasure(2)
+        );
+        Dragon chermander = new Dragon("Chermander", bank);
+        while (chermander!=null) {
+
+            chermander.printMenu();
+            switch (chermander.getAnswer()) {
+                case 1: {
+                    chermander.getBank().getInfo(0);
+                    break;
+                }
+                case 2: {
+                    System.out.println(chermander.getBank().getMostValuable());
+                    break;
+                }
+                case 3: {
+                    int answer = chermander.getAnswer("How much money you have?");
+                    System.out.println("Your set is ready:");
+                    ArrayList<Treasure> treasuresCheckedBy = chermander.getBank().getTreasuresCheckedBy(answer);
+                    System.out.println(treasuresCheckedBy);
+                    System.out.printf("Total value of set is %d", Bank.getSumOfSet(treasuresCheckedBy));
+                    break;
+                }
+                case 4: {
+                    chermander.putTreasure();
+                    break;
+                }
+                default:
+                    System.out.println("See ya");
+                    chermander = null;
+            }
+        }
+//        bank.getInfo(0);
+//        System.out.println();
+//        bank.getInfo(15);
+//        System.out.println();
+//        System.out.println("Get most value treasure:");
+//        System.out.println(bank.getMostValuable());
+//        System.out.println();
+//        int money = 85;
+//
+//        System.out.println("Get set of treasures from the bank for " + money + ':');
+//        ArrayList<Treasure> treasuresCheckedBy = bank.getTreasuresCheckedBy(money);
+//        System.out.println(treasuresCheckedBy);
+//        System.out.printf("Total value of set is %d", Bank.getSumOfSet(treasuresCheckedBy));
+//        System.out.println("\n--------------------------------------------------------");
+//        System.out.println("Alternative getting set of treasures from the bank for " + money + ':');
+//        ArrayList<Treasure> altTreasuresCheckedBy = bank.chooseTreasures(money);
+//        System.out.println(altTreasuresCheckedBy);
+//        System.out.printf("Total value of set is %d", Bank.getSumOfSet(altTreasuresCheckedBy));
 
     }
 }
